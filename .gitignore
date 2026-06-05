@@ -1,0 +1,17 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Lab output — attendees generate these; keep the repo clean
+output/
+*_clean.csv
+combined*.csv
+report*.txt
+report*.md
