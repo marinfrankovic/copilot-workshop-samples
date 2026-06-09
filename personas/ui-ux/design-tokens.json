@@ -1,0 +1,17 @@
+{
+  "$comment": "Starter design tokens. Ask Copilot to extend these (dark mode, states, type scale) and to USE them in the prototype.",
+  "color": {
+    "brand": { "accent": "#2F6FED", "accent-hover": "#1E54C6" },
+    "surface": { "card": "#FFFFFF", "page": "#F4F6FB" },
+    "text": { "primary": "#1B1F27", "muted": "#5B6472", "on-accent": "#FFFFFF" },
+    "status": { "up": "#1B8A5A", "down": "#C0392B" }
+  },
+  "space": { "xs": "4px", "sm": "8px", "md": "16px", "lg": "24px", "xl": "40px" },
+  "radius": { "sm": "6px", "md": "12px", "lg": "20px" },
+  "type": {
+    "family": "system-ui, Segoe UI, Roboto, sans-serif",
+    "size": { "label": "13px", "body": "15px", "headline": "32px" },
+    "weight": { "regular": 400, "medium": 600, "bold": 700 }
+  },
+  "shadow": { "card": "0 6px 20px rgba(27, 31, 39, 0.08)" }
+}
