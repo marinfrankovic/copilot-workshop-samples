@@ -1,39 +1,33 @@
-# Copilot Workshop — Sample Files (Persona Edition)
+# Copilot Workshop — Sample Files (Infra + Data Edition)
 
 Sample files for the 1-hour session **"GitHub Copilot for non-coders, by role"** —
-UI/UX Designers, Data Engineers, and Product Owners describing what they want in
-plain English and getting real artefacts back (no coding background required).
+Infrastructure and Data people describing what they want in plain English and
+getting real artefacts back (no deep coding background required).
 
 Open this whole folder in VS Code (**File ▸ Open Folder**) so Copilot can see the files.
 
 ```
 .
 └─ personas/
-   ├─ ui-ux/                 ← Design in plain English → spec, tokens, prototype
-   │   ├─ design-brief.md
-   │   ├─ design-tokens.json
-   │   ├─ prototype-starter.html
+   ├─ infra/                 ← Describe infrastructure in English → IaC, deploy, fixes
+   │   ├─ architecture-brief.md
+   │   ├─ main.bicep
+   │   ├─ sample-error.txt
    │   └─ README.md
-   ├─ data-engineer/         ← Build an ETL pipeline, then query the result
-   │   ├─ sales_january.csv     (messy on purpose: $ signs, mixed case, commas)
-   │   ├─ sales_february.csv    (different column names & date format)
-   │   ├─ product_prices.csv    (price lookup table)
-   │   └─ PIPELINE.md
-   └─ product-owner/         ← Research → great user stories + Definition of Done
-       ├─ feature-request.md
-       ├─ user-story-template.md
-       └─ README.md
+   └─ data/                  ← Build an ETL pipeline, then query the result
+       ├─ sales_january.csv     (messy on purpose: $ signs, mixed case, commas)
+       ├─ sales_february.csv    (different column names & date format)
+       ├─ product_prices.csv    (price lookup table)
+       └─ PIPELINE.md
 ```
 
-## The three tracks
+## The two tracks
 
-- **UI/UX — Design in plain English:** turn `ui-ux/design-brief.md` into a component
-  spec, extend `design-tokens.json`, and have Copilot build a working HTML/CSS
-  prototype in `prototype-starter.html`. Same muscle you use to drive Figma's AI.
-- **Data Engineer — ETL, then query:** clean and merge the messy `data-engineer/`
-  exports into one table, join the price list, and immediately run SQL on the result.
-- **Product Owner — research & stories:** turn the messy `product-owner/feature-request.md`
-  into INVEST user stories with a solid, testable Definition of Done.
+- **Infra — Describe infrastructure in plain English:** turn `infra/architecture-brief.md`
+  into a plan, generate `main.bicep`, get the deploy/validate/destroy commands, and
+  paste `sample-error.txt` to fix a failed deployment — all in plain English.
+- **Data — ETL, then query:** clean and merge the messy `data/` exports into one table,
+  join the price list, and immediately run SQL on the result.
 
 Each folder's README has a short, in-room demo flow and prompt starters.
 
@@ -46,8 +40,8 @@ sample identities. There is **no real personal data** in this repository.
 ## Tips
 
 - No setup or installs are required to *read* these files.
-- If a track asks you to *run* something, a coach will help — or Copilot will give you the one command to use.
-- Always work on a **copy** of real data, never the original.
+- If a track asks you to *run* or *deploy* something, a coach will help — or Copilot will give you the one command to use.
+- Always work on a **copy** of real data, and validate infrastructure before you deploy.
 
 ## License
 

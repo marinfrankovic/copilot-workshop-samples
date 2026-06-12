@@ -1,0 +1,25 @@
+Paste this into Copilot Chat and ask: "Explain this deployment error in plain
+English and suggest the smallest fix. Do not rewrite my whole template." This is
+a realistic, messy failure — the kind you actually hit.
+
+$ az deployment group create -g rg-contoso-reporting-demo \
+    --template-file main.bicep --parameters namePrefix=contosorpt
+
+{
+  "code": "InvalidTemplateDeployment",
+  "message": "The template deployment failed with error: 'The resource
+  'Microsoft.Storage/storageAccounts/contosorptsa01' was disallowed by policy.
+  Policies: 'deny-public-blob-access'. Reason: 'allowBlobPublicAccess must be
+  set to false.'"
+}
+
+ALSO seen on a later run:
+
+ERROR: {"code":"StorageAccountAlreadyTaken","message":"The storage account
+named contosorptsa01 is already taken. Storage account names must be globally
+unique and 3-24 lowercase letters and numbers."}
+
+ALSO seen when the web app tried to read storage:
+
+ManagedIdentityCredential authentication failed: the web app's identity has no
+role assignment on the storage account (403 AuthorizationPermissionMismatch).
