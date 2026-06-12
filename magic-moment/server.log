@@ -1,0 +1,28 @@
+2026-03-02 08:14:02 INFO  api-gateway   Starting Contoso reporting service v2.4.1 (env=demo)
+2026-03-02 08:14:03 INFO  api-gateway   Listening on 0.0.0.0:8080
+2026-03-02 08:14:03 INFO  storage-conn  Connecting to storage account contosorptsa01...
+2026-03-02 08:14:04 INFO  storage-conn  Connected. Using managed identity.
+Mar  2 08:15:11 web-01 deploy[2291]: release 2.4.1 promoted to slot=production
+2026-03-02 08:15:44 INFO  api-gateway   GET /reports/january 200 41ms
+2026-03-02 08:16:02 WARN  storage-conn  slow blob read: 1280ms (container=reports)
+2026-03-02 08:16:30 INFO  api-gateway   GET /reports/february 200 38ms
+2026-03-02 08:18:07 WARN  cache         cache miss rate high: 72% over last 60s
+2026-03-02 08:19:55 ERROR storage-conn  AuthorizationPermissionMismatch: identity lacks 'Storage Blob Data Reader' on contosorptsa01
+2026-03-02 08:19:55 ERROR api-gateway   GET /reports/march 500 (downstream storage error)
+2026-03-02 08:20:01 ERROR storage-conn  AuthorizationPermissionMismatch: identity lacks 'Storage Blob Data Reader' on contosorptsa01
+2026-03-02 08:20:02 ERROR api-gateway   GET /reports/march 500 (downstream storage error)
+2026-03-02T08:20:09Z app=reporting level=error msg="retry 1/3 failed" component=storage-conn
+2026-03-02 08:20:14 ERROR storage-conn  AuthorizationPermissionMismatch: identity lacks 'Storage Blob Data Reader' on contosorptsa01
+2026-03-02T08:20:21Z app=reporting level=error msg="retry 2/3 failed" component=storage-conn
+2026-03-02 08:20:33 ERROR api-gateway   GET /reports/march 500 (downstream storage error)
+2026-03-02 08:21:00 WARN  cache         evicting 4200 entries (memory pressure)
+2026-03-02T08:21:12Z app=reporting level=error msg="retry 3/3 failed; giving up" component=storage-conn
+2026-03-02 08:21:13 ERROR api-gateway   circuit breaker OPEN for storage-conn (5 consecutive failures)
+2026-03-02 08:22:40 INFO  oncall        paged: SEV3 reporting errors on /reports/march
+Mar  2 08:24:18 web-01 admin[3310]: assigned role 'Storage Blob Data Reader' to webapp managed identity
+2026-03-02 08:24:51 INFO  storage-conn  circuit breaker HALF-OPEN, probing...
+2026-03-02 08:24:52 INFO  storage-conn  probe read ok (container=reports) 88ms
+2026-03-02 08:24:52 INFO  storage-conn  circuit breaker CLOSED
+2026-03-02 08:25:03 INFO  api-gateway   GET /reports/march 200 47ms
+2026-03-02 08:25:40 INFO  api-gateway   GET /reports/march 200 39ms
+2026-03-02 08:30:00 INFO  api-gateway   health=ok error_rate_1m=0.0% uptime=15m

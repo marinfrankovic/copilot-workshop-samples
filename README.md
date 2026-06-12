@@ -23,6 +23,9 @@ Open this whole folder in VS Code (**File ▸ Open Folder**) so Copilot can see 
 
 ```
 .
+├─ magic-moment/          ← Opener demo: make sense of a mystery log
+│   ├─ server.log
+│   └─ README.md
 └─ personas/
    ├─ infra/                 ← Describe infrastructure in English → IaC, deploy, fixes
    │   ├─ architecture-brief.md
@@ -36,8 +39,11 @@ Open this whole folder in VS Code (**File ▸ Open Folder**) so Copilot can see 
        └─ PIPELINE.md
 ```
 
-## The two tracks
+## The opener + two tracks
 
+- **Magic moment — Make sense of a mystery log:** point Copilot at `magic-moment/server.log`
+  and get an instant plain-English diagnosis plus a clean, structured table — the
+  fast "wow" that opens the session for both audiences.
 - **Infra — Describe infrastructure in plain English:** turn `infra/architecture-brief.md`
   into a plan, generate `main.bicep`, get the deploy/validate/destroy commands, and
   paste `sample-error.txt` to fix a failed deployment — all in plain English.
