@@ -25,6 +25,12 @@ moment". Then **you** spend ~50 minutes doing it yourself:
 The rhythm in every track is
 **Prompt → Suggestion → Run → Refine → Sanity-check.**
 
+> **The whole point is the conversation with Copilot.** You use Copilot Chat in
+> **Agent mode**, where it writes the code *and* runs the commands and deploys —
+> showing you each step and waiting for your approval. You describe outcomes in
+> plain English; you rarely type a command yourself (a few sign-in and
+> double-check commands aside).
+
 ## What you need
 
 - A laptop and a **GitHub account with a Copilot licence** (your facilitator

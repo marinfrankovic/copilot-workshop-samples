@@ -54,9 +54,15 @@ first three; only the Data track needs Python).
    the **GitHub account** that has your Copilot licence.
 3. When it's ready you'll be able to open **Copilot Chat** (the speech-bubble
    icon, or press **Ctrl+Alt+I** on Windows / **Cmd+Ctrl+I** on Mac).
+4. **Set the chat to Agent mode.** There's a mode dropdown in the chat box — choose
+   **Agent**. This lets Copilot not just *write* things but *do* them (run
+   commands, create files, deploy) — always showing you what it's about to do and
+   waiting for you to click **Continue**. That approval is how you stay in control.
 
-> Throughout the labs, "**ask Copilot**" means: type the sentence into that
-> Copilot Chat box and press Enter.
+> Throughout the labs, “**ask Copilot**” means: type the sentence into the Copilot
+> Chat box (in **Agent mode**) and press Enter — then read and approve whatever it
+> proposes. The whole workshop is this conversation; you rarely type commands
+> yourself.
 
 ---
 

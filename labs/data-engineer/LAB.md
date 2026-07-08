@@ -1,182 +1,144 @@
-# Data Engineer lab — clean messy data, then put it in Azure
+# Data Engineer lab — clean data and ship it by *talking* to Copilot
 
-**You will not write any code by hand.** You'll describe what you want in plain
-English, GitHub Copilot will write it, and you'll run it and check the numbers. By
-the end you'll have turned three messy spreadsheets into one clean table, asked it
-questions, and uploaded the result to Azure — then deleted it.
+**This lab is about one skill: describing what you want to GitHub Copilot and
+letting it do the work.** You won't write code or memorise commands. You'll have a
+conversation — Copilot writes the cleanup, runs it, answers your questions with
+SQL, and uploads the result to Azure, while **you** check the numbers and stay in
+charge.
 
 **Time:** about 45 minutes. **You need no coding experience.**
 
 > ### 👉 First time? Do the setup first.
-> If you haven't installed the tools (including **Python**), cloned the repo, and
+> If you haven't installed the tools (including **Python**), got the files, and
 > signed into Azure yet, open **[`SETUP.md`](../../SETUP.md)** (in the top folder)
-> and do those 6 steps. Come back here when `az account show` printed your
-> subscription. This lab assumes that's done.
+> and do those steps. Come back when `az account show` printed your subscription.
 
-> **The rhythm you'll repeat the whole time — "the loop":**
-> **Prompt** (say what you want) → **Suggestion** (Copilot writes it) →
-> **Run** (try it) → **Refine** (ask for one change) → **Sanity-check** (make sure
-> the numbers are right). You go round until it's right.
+> **The rhythm you'll repeat — "the loop":**
+> **Prompt** (say what you want) → **Suggestion** (Copilot writes/does it) →
+> **Run** (it runs, you approve) → **Refine** (ask for one change) →
+> **Sanity-check** (confirm the numbers). You go round until it's right.
+
+---
+
+## The one thing to set up: Copilot **Agent mode**
+
+The magic today is that Copilot can not only *write* code, it can *run* it — clean
+your files, run queries, upload to Azure — right from the chat. For that, put
+Copilot Chat into **Agent mode**:
+
+1. Open Copilot Chat (speech-bubble icon, or **Ctrl+Alt+I**).
+2. Set the mode dropdown to **Agent**.
+3. When you ask for something, Copilot shows the program or command it wants to
+   run and **waits for you to approve** (a **Continue** / **Allow** button).
+   **Read it, then approve.** That's you staying in control.
+
+> Throughout this lab, a line in quotes like *"Do X"* means: **type it into
+> Copilot Chat (Agent mode) and press Enter**, then approve what it proposes. You
+> almost never type commands yourself.
 
 ---
 
 ## What you'll build
 
-- One clean, tidy table made from three messy sales files.
-- Answers to real questions ("how much did each region sell?") using **SQL** —
-  Copilot writes the SQL, you just read the answers.
-- The clean file **uploaded to Azure storage**, then deleted.
-
-The three starter files are already in this folder:
-
-- `sales_january.csv` — messy on purpose ($ signs, commas in numbers, odd capitals).
-- `sales_february.csv` — different column names and a different date style.
-- `product_prices.csv` — a tidy price list to match against.
+Three messy spreadsheets → one clean table → answers to real questions → the clean
+file uploaded to Azure — then deleted. The starter files are already in this
+folder: `sales_january.csv`, `sales_february.csv`, `product_prices.csv`.
 
 ---
 
-## How to do each step
+## Step 1 — Ask Copilot what's wrong with the data
 
-Every step is either **"ask Copilot"** or **"run a command"**.
+Open the `labs/data-engineer` folder in VS Code so Copilot can see the files.
+Then, in Copilot Chat (Agent mode), ask:
 
-- **Ask Copilot** = type the sentence into the **Copilot Chat** box (speech-bubble
-  icon, or **Ctrl+Alt+I**) and press Enter.
-- **Run a command** = type it into the **terminal** at the bottom of VS Code
-  (open one with **Terminal ▸ New Terminal**), then press Enter.
+> *"Look at the 3 CSV files in this folder. In plain English, list everything
+> that's messy or inconsistent — different column names, date formats, dollar
+> signs, commas in numbers, capitalisation, extra spaces — that I'd need to fix
+> before combining them."*
 
-Take your time and read what comes back. You always work on **copies** — the
-original files are never changed.
+Read the list. That's your to-do list — and Copilot will do it for you.
 
----
+## Step 2 — Ask Copilot to clean and combine the data
 
-## Step 1 — Open the right folder
+> *"Write a Python program that fixes every issue you just listed, combines
+> January and February into one tidy table, and saves it as a new file
+> `sales_clean.csv`. Do not change my original files. Then run it, and tell me in
+> five simple bullets what it did."*
 
-In VS Code's left sidebar, click into **`labs`** → **`data-engineer`** so you can
-see the three `.csv` files. Click one to peek at how messy it is, then close it.
+Copilot writes the program **and** runs it (approve when it asks). A new
+`sales_clean.csv` appears. Click it to look.
 
-## Step 2 — Ask Copilot what's wrong with the data (Prompt → Suggestion)
+> **Something goes red?** Just say: *"That errored — explain it simply and fix
+> it."* Copilot sorts it out and runs it again.
 
-Open Copilot Chat and paste:
+## Step 3 — Ask questions with plain English (Copilot writes the SQL)
 
-> *"Look at the 3 CSV files in this folder. In plain English, list everything that
-> is messy or inconsistent about them — different column names, different date
-> formats, dollar signs, commas inside numbers, capitalisation, extra spaces —
-> that I'd need to fix before combining them."*
+You don't need to know SQL — describe the question:
 
-Read the list. That's your to-do list, and Copilot will do it for you next.
+> *"Using `sales_clean.csv`, show me total revenue by region and total revenue by
+> month. Run it and show me the answers as a neat table."*
 
-## Step 3 — Ask Copilot to write the cleanup (Suggestion)
+Read the answers. Ask follow-ups the same way: *"Now show me the top-selling
+product."*
 
-> *"Write a Python program called `clean_sales.py` that reads all three CSV files,
-> fixes every issue you just listed, combines January and February into one tidy
-> table, and saves it as a new file `sales_clean.csv`. Do NOT change the original
-> files. Add a comment explaining each step in plain English."*
-
-## Step 4 — Read it, then run it (Run)
-
-First, ask Copilot to reassure you:
-
-> *"In five simple bullets, tell me what this program does and confirm it only
-> creates new files and never changes my originals."*
-
-Then run it in the terminal:
-
-```powershell
-python clean_sales.py
-```
-
-A new file `sales_clean.csv` should appear in the folder. Click it to look.
-
-> **Red error?** Copy it, paste it into Copilot Chat, and ask: *"Explain this
-> error simply and give me the smallest fix."* Then run it again.
-
-## Step 5 — Ask questions with SQL (Run)
-
-You don't need to know SQL — Copilot writes it. Paste:
-
-> *"Load `sales_clean.csv` into an in-memory SQLite database and show me total
-> revenue by region and total revenue by month. Print the answers as a neat
-> table. Give me one program I can run."*
-
-Run whatever file it creates (it'll tell you the command, usually
-`python something.py`) and read the answers.
-
-## Step 6 — Add the price comparison (Refine)
+## Step 4 — Refine: add the price comparison
 
 > *"Now also use `product_prices.csv` to compare the actual price per unit against
 > the list price, and show me the five biggest discounts."*
 
-## Step 7 — Check you can trust it (Sanity-check)
+## Step 5 — Sanity-check (make sure you can trust it)
 
-> *"Print the number of rows, the range of dates, three example rows, and the
+> *"Show me the number of rows, the range of dates, three example rows, and the
 > total revenue before and after cleaning, so I can be sure nothing was lost or
 > double-counted."*
 
-Do the before/after totals make sense? If something looks off, tell Copilot
-exactly what and ask for a fix.
+Do the before/after totals make sense? If something looks off, say exactly what
+and ask Copilot to fix it.
 
-## Step 8 — Put the clean file in Azure (Run)
+## Step 6 — Ask Copilot to ship it to Azure (approve as it goes)
 
-Now upload `sales_clean.csv` to a private storage account you create. Run these in
-the terminal, one at a time. (You can also ask Copilot to explain each line.)
+> *"Create a resource group with a **unique name** (add a random number so it
+> doesn't clash with other people) in the **Sweden Central** region, then create a
+> **private** storage account in it and upload my `sales_clean.csv` into a
+> container. Use the storage account key so I don't need extra permissions. Tell
+> me the resource group name you chose, and confirm the storage is private."*
 
-```powershell
-# 1. Everyone shares one subscription, so make a uniquely-named "box"
-#    (resource group). The random number keeps your name unique.
-#    Write the name down in case you open a new terminal later.
-$rg = "rg-contoso-data-$(Get-Random -Maximum 99999)"
-$rg
-az group create --name $rg --location swedencentral
-```
-```powershell
-# 2. Make a private storage account with its own globally-unique name
-$name = "contosodata$(Get-Random -Maximum 99999)"
-az storage account create --name $name --resource-group $rg --sku Standard_LRS --allow-blob-public-access false
-```
-```powershell
-# 3. Get the account's access key (you have permission to read this)
-$key = az storage account keys list --account-name $name --resource-group $rg --query "[0].value" --output tsv
-```
-```powershell
-# 4. Make a container and upload your clean file into it
-az storage container create --name reports --account-name $name --account-key $key
-az storage blob upload --account-name $name --account-key $key --container-name reports --file sales_clean.csv --name sales_clean.csv
-```
-```powershell
-# 5. Confirm it's really there
-az storage blob list --container-name reports --account-name $name --account-key $key --output table
-```
+Copilot proposes each command — **read and approve**. **Note the resource group
+name** it tells you (you'll want it at teardown).
 
-Then ask Copilot: *"Explain in five simple bullets what those Azure commands just
-did, and confirm the storage is private."*
-
-## Step 9 — Tear it all down (do NOT skip this) 🧹
-
-Delete everything so it stops costing anything:
+*(Want to see the uploaded file yourself? That's a fair validation command:)*
 
 ```powershell
-az group delete --name $rg --yes --no-wait
-```
-```powershell
-az group exists --name $rg
+az storage blob list --container-name reports --account-name <name-Copilot-made> --account-key <key> --output table
 ```
 
-That last line should say `false` after a minute or two. Done — you cleaned real
-data and shipped it to the cloud, all by describing it. 🎉
+## Step 7 — Ask Copilot to tear it all down (do NOT skip) 🧹
+
+> *"Delete the resource group you created so nothing keeps costing money, and
+> confirm when it's gone."*
+
+Approve it. To double-check yourself:
+
+```powershell
+az group exists --name <the-name-Copilot-chose>
+```
+
+`false` means it's gone. 🎉 You cleaned real data and shipped it to the cloud —
+all by describing what you wanted.
 
 ---
 
-## If you finish early (optional)
+## If you finish early (keep the conversation going)
 
-- *"Show me which sales rep sold the most in each region."*
-- *"Check that every revenue value turned into a proper number, and show me any
-  rows that didn't."*
-- *"Make a bar chart of revenue by month and save it as an image."*
+- *"Which sales rep sold the most in each region? Run it."*
+- *"Check that every revenue value became a proper number, and show me any rows
+  that didn't."*
+- *"Make a bar chart of revenue by month, save it as an image, and open it."*
 
 ## The rules that keep you safe
 
-- **Work on copies** — the original CSVs are never changed.
-- **Read before you run** — ask Copilot to explain a program in 5 bullets first.
-- **Never paste** real secrets, keys, or your subscription ID into Copilot Chat.
-- **Always tear down** at the end (Step 9).
-- **You're in charge.** Copilot writes; you check the numbers.
+- **You approve every action.** Copilot proposes; you read it and click Continue.
+- **Work on copies** — your original CSVs are never changed.
+- **Read before you run** — ask for the five-bullet summary first.
+- **Never paste** real secrets, keys, or your subscription ID into the chat.
+- **Always tear down** at the end (Step 7).

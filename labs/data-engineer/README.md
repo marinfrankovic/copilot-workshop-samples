@@ -20,14 +20,14 @@ the pipeline. You describe each step; Copilot writes it; you run and check.
 - [`LAB.md`](LAB.md) — the step-by-step, self-guided lab.
 
 ## What you'll build (Extract → Transform → Load → Query → Ship)
-1. **Extract:** read all three CSVs.
-2. **Transform:** normalise column names; strip `$` and commas from revenue; trim
-   and title-case names; standardise region; parse both date formats to ISO.
-3. **Load:** write a clean `sales_clean.csv` **and** load it into an in-memory
-   SQLite table — never overwrite the originals.
-4. **Query:** run SQL immediately — revenue by region, top product, month-over-month.
-5. **Ship:** create an Azure Storage account and **upload `sales_clean.csv`** to a
-   blob container, then tear it down.
+You do all of this by **talking to Copilot in Agent mode** — it writes and runs
+the code, you check the numbers and approve each step.
+1. **Extract:** ask Copilot to read all three CSVs.
+2. **Transform:** ask it to normalise column names, dates, and money, and title-case names.
+3. **Load:** it writes a clean `sales_clean.csv` — never overwriting the originals.
+4. **Query:** describe questions in English; Copilot writes and runs the SQL.
+5. **Ship:** ask it to create a private Azure Storage account and **upload the
+   clean file**, then tear it down.
 
 ## What you need
 - VS Code + GitHub Copilot signed in.

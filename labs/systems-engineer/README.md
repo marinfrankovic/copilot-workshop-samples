@@ -24,12 +24,14 @@ real**, then tear it down. You stay in control; Copilot drafts.
   never creates role assignments. (All covered in [`SETUP.md`](../../SETUP.md).)
 
 ## The loop
-1. **Plan** — Copilot reads the brief and lists resources before writing code.
-2. **Generate** — Copilot fills `main.bicep` (network, NSG, VM, storage), no RBAC.
-3. **Run** — preview with `what-if`, then deploy.
-4. **Refine** — lock the NSG to your IP, keep storage private, add tags.
-5. **Sanity-check** — paste `sample-error.txt`, fix the smallest thing, then
-   **tear it all down**.
+You do all of this by **talking to Copilot in Agent mode** — it writes and runs
+things, you approve each step.
+1. **Plan** — ask Copilot to read the brief and list the resources.
+2. **Generate** — ask it to fill `main.bicep` (network, VM, storage), no role assignments.
+3. **Run** — ask it to preview with `what-if`, then deploy to a uniquely-named group.
+4. **Refine** — ask it to lock the firewall to your IP, keep storage private.
+5. **Sanity-check** — paste an error from `sample-error.txt`, let it fix the smallest
+   thing, then ask it to **tear everything down**.
 
 ## Safety
 - Validate before you deploy (`what-if`); know what gets created and what it costs.
