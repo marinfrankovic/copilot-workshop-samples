@@ -4,7 +4,11 @@
 SQL, then **push the clean result up to Azure storage** — without hand-writing
 the pipeline. You describe each step; Copilot writes it; you run and check.
 
-> **Start here:** open [`LAB.md`](LAB.md) and follow it top to bottom (~50 min).
+> **Start here:** open [`LAB.md`](LAB.md) and follow it top to bottom (~45 min).
+>
+> **Never used these tools before?** Do [`SETUP.md`](../../SETUP.md) in the top
+> folder first (install tools incl. Python, get the files, sign into Azure), then
+> open `LAB.md`.
 
 ## Files (deliberately messy, like real exports)
 - [`sales_january.csv`](sales_january.csv) — `$` signs, commas inside numbers
@@ -26,10 +30,12 @@ the pipeline. You describe each step; Copilot writes it; you run and check.
    blob container, then tear it down.
 
 ## What you need
-- VS Code + GitHub Copilot (Chat, Agent mode).
+- VS Code + GitHub Copilot signed in.
 - Python 3 (SQLite ships with it). Azure CLI (`az`) for the ship step.
-- **Contributor** on a subscription or resource group. **No Owner needed** — the
-  upload uses the storage account key, not a role assignment.
+- An Azure subscription your facilitator **invited you to**, with **Contributor**
+  access and the **subscription ID** they gave you. **No Owner needed** — the
+  upload uses the storage account key, not a role assignment. (All covered in
+  [`SETUP.md`](../../SETUP.md).)
 
 ## Safety
 - Write to **new** files only; keep the source CSVs untouched.

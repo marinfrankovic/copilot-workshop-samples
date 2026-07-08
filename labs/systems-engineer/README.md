@@ -5,7 +5,10 @@ Copilot produce the infrastructure-as-code, the deploy/preview/destroy commands,
 and plain-English fixes when a deployment fails. You **deploy it to Azure for
 real**, then tear it down. You stay in control; Copilot drafts.
 
-> **Start here:** open [`LAB.md`](LAB.md) and follow it top to bottom (~50 min).
+> **Start here:** open [`LAB.md`](LAB.md) and follow it top to bottom (~45 min).
+>
+> **Never used these tools before?** Do [`SETUP.md`](../../SETUP.md) in the top
+> folder first (install tools, get the files, sign into Azure), then open `LAB.md`.
 
 ## Files
 - [`LAB.md`](LAB.md) — the step-by-step, self-guided lab.
@@ -14,10 +17,11 @@ real**, then tear it down. You stay in control; Copilot drafts.
 - [`sample-error.txt`](sample-error.txt) — realistic deployment errors to paste and fix.
 
 ## What you need
-- VS Code + GitHub Copilot (Chat, Agent mode).
+- VS Code + GitHub Copilot signed in.
 - Azure CLI (`az`) installed.
-- **Contributor** on a subscription or resource group. **No Owner needed** — this
-  lab never creates role assignments.
+- An Azure subscription your facilitator **invited you to**, with **Contributor**
+  access and the **subscription ID** they gave you. **No Owner needed** — this lab
+  never creates role assignments. (All covered in [`SETUP.md`](../../SETUP.md).)
 
 ## The loop
 1. **Plan** — Copilot reads the brief and lists resources before writing code.
