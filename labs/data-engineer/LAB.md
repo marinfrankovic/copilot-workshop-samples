@@ -121,17 +121,21 @@ Now upload `sales_clean.csv` to a private storage account you create. Run these 
 the terminal, one at a time. (You can also ask Copilot to explain each line.)
 
 ```powershell
-# 1. Make a "box" (resource group) to hold everything
-az group create --name rg-contoso-data --location westeurope
+# 1. Everyone shares one subscription, so make a uniquely-named "box"
+#    (resource group). The random number keeps your name unique.
+#    Write the name down in case you open a new terminal later.
+$rg = "rg-contoso-data-$(Get-Random -Maximum 99999)"
+$rg
+az group create --name $rg --location swedencentral
 ```
 ```powershell
-# 2. Make a private storage account with a unique name
+# 2. Make a private storage account with its own globally-unique name
 $name = "contosodata$(Get-Random -Maximum 99999)"
-az storage account create --name $name --resource-group rg-contoso-data --sku Standard_LRS --allow-blob-public-access false
+az storage account create --name $name --resource-group $rg --sku Standard_LRS --allow-blob-public-access false
 ```
 ```powershell
 # 3. Get the account's access key (you have permission to read this)
-$key = az storage account keys list --account-name $name --resource-group rg-contoso-data --query "[0].value" --output tsv
+$key = az storage account keys list --account-name $name --resource-group $rg --query "[0].value" --output tsv
 ```
 ```powershell
 # 4. Make a container and upload your clean file into it
@@ -151,10 +155,10 @@ did, and confirm the storage is private."*
 Delete everything so it stops costing anything:
 
 ```powershell
-az group delete --name rg-contoso-data --yes --no-wait
+az group delete --name $rg --yes --no-wait
 ```
 ```powershell
-az group exists --name rg-contoso-data
+az group exists --name $rg
 ```
 
 That last line should say `false` after a minute or two. Done — you cleaned real

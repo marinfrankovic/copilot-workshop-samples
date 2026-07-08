@@ -112,21 +112,34 @@ paste the values from Step 4. Save the file (**Ctrl+S**).
 
 ## Step 6 — Preview first, then create it (Run)
 
-**Always preview before you build.** First make the "box" (resource group), then
-ask Azure to show you what *would* happen — nothing is created yet:
+Everyone in the room shares the **same** Azure subscription, so first give your
+environment a **name nobody else will use.** This command adds a random number and
+prints it — **write the name down** in case you open a new terminal later:
 
 ```powershell
-az group create --name rg-contoso-sandbox --location westeurope
+$rg = "rg-contoso-sandbox-$(Get-Random -Maximum 99999)"
+$rg
+```
+
+From here on the commands use `$rg` for that name. *(If you close the terminal and
+open a new one, first run `$rg = "the-name-you-wrote-down"` again.)*
+
+**Always preview before you build.** Make the "box" (resource group) in the
+**Sweden Central** region, then ask Azure to show you what *would* happen — nothing
+is created yet:
+
+```powershell
+az group create --name $rg --location swedencentral
 ```
 ```powershell
-az deployment group what-if --resource-group rg-contoso-sandbox --template-file main.bicep --parameters main.parameters.json
+az deployment group what-if --resource-group $rg --template-file main.bicep --parameters main.parameters.json
 ```
 
 Read the list of what it will create. If it looks reasonable, build it for real
 (this takes a couple of minutes):
 
 ```powershell
-az deployment group create --resource-group rg-contoso-sandbox --template-file main.bicep --parameters main.parameters.json
+az deployment group create --resource-group $rg --template-file main.bicep --parameters main.parameters.json
 ```
 
 > **See a red error?** Good — that's normal. Copy the whole thing, paste it into
@@ -139,7 +152,7 @@ az deployment group create --resource-group rg-contoso-sandbox --template-file m
 See everything that got created:
 
 ```powershell
-az resource list --resource-group rg-contoso-sandbox --output table
+az resource list --resource-group $rg --output table
 ```
 
 Then ask Copilot: *"Explain in five simple bullets what I just created in Azure,
@@ -162,14 +175,17 @@ one thing.
 This deletes everything you made so it stops costing money. Run:
 
 ```powershell
-az group delete --name rg-contoso-sandbox --yes --no-wait
+az group delete --name $rg --yes --no-wait
 ```
 
 Check it's being removed (this should say `false` after a minute or two):
 
 ```powershell
-az group exists --name rg-contoso-sandbox
+az group exists --name $rg
 ```
+
+> Opened a new terminal since Step 6? Run `$rg = "the-name-you-wrote-down"` first,
+> or just type the name directly: `az group delete --name rg-contoso-sandbox-12345 --yes --no-wait`.
 
 You're done. You just built and destroyed a real cloud environment by describing
 it in plain English. 🎉

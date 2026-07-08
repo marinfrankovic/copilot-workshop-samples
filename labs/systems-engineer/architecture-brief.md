@@ -12,7 +12,9 @@ and internal. It must be cheap, private by default, and reproducible from one
 command.
 
 ## What the environment should include
-- A **resource group** in West Europe, tagged `env=sandbox`, `owner=<your alias>`.
+- A **resource group** in **Sweden Central**, with a **unique name** (add a random
+  suffix so it doesn't clash with other people sharing the subscription), tagged
+  `env=sandbox`, `owner=<your alias>`.
 - A **virtual network** (`10.20.0.0/16`) with one **subnet** (`snet-app`, `10.20.1.0/24`).
 - A **network security group** on the subnet that allows inbound **SSH (22)**
   **only** from a single IP address you pass in as a parameter, and denies the

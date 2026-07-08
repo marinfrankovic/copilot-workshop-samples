@@ -33,7 +33,7 @@ contososbxsa is already taken. Storage account names must be globally unique and
 --- 4) VM size not available in this region/zone ---
 
 ERROR: {"code":"SkuNotAvailable","message":"The requested VM size Standard_B2s is
-not available in location 'westeurope' for the requested zone. Try a different
+not available in location 'swedencentral' for the requested zone. Try a different
 size or region, or omit the zone."}
 
 --- 5) You only have Contributor (no permission to assign roles) ---
