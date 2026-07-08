@@ -1,0 +1,45 @@
+Paste one of these into Copilot Chat and ask: "Explain this deployment error in
+plain English and suggest the smallest fix. Do not rewrite my whole template."
+These are realistic, messy failures — the kind you actually hit deploying the
+sandbox. They all fit a Contributor-only setup (no role assignments involved).
+
+--- 1) Storage name collision (globally unique) ---
+
+$ az deployment group create -g rg-contoso-sandbox-alex \
+    --template-file main.bicep --parameters main.parameters.json
+
+ERROR: {"code":"StorageAccountAlreadyTaken","message":"The storage account named
+contososbxsa is already taken. Storage account names must be globally unique and
+3-24 lowercase letters and numbers."}
+
+--- 2) Policy blocks public blob access ---
+
+{
+  "code": "RequestDisallowedByPolicy",
+  "message": "Resource 'contososbxsa' was disallowed by policy
+  'deny-storage-public-blob-access'. Reason: 'allowBlobPublicAccess must be set
+  to false.'"
+}
+
+--- 3) NSG rule too open ---
+
+{
+  "code": "InvalidRequestFormat",
+  "message": "Security rule 'allow-ssh' has sourceAddressPrefix '*' which is not
+  permitted by policy 'deny-ssh-from-internet'. SSH (22) must be restricted to a
+  specific source address."
+}
+
+--- 4) VM size not available in this region/zone ---
+
+ERROR: {"code":"SkuNotAvailable","message":"The requested VM size Standard_B2s is
+not available in location 'westeurope' for the requested zone. Try a different
+size or region, or omit the zone."}
+
+--- 5) You only have Contributor (no permission to assign roles) ---
+
+ERROR: {"code":"AuthorizationFailed","message":"The client 'alex@contoso.com' with
+object id '...' does not have authorization to perform action
+'Microsoft.Authorization/roleAssignments/write' over scope '.../contososbxsa'.
+(This happens if the template tries to create a role assignment — remove it; you
+only have Contributor.)"}

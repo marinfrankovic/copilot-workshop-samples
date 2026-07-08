@@ -1,68 +1,85 @@
 # Copilot Workshop — Sample Files (Infra + Data Edition)
 
-Sample files for the 1-hour session **"GitHub Copilot for non-coders, by role"** —
-Infrastructure and Data people describing what they want in plain English and
-getting real artefacts back (no deep coding background required).
+Sample files for the session **"GitHub Copilot for non-coders, by role"** —
+systems engineers and data engineers describing what they want in plain English
+and getting real artefacts back (no deep coding background required).
 
-## About this workshop
+## Format: 10 minutes of talk, 50 minutes of hands-on
 
-From idea to done — in plain English. In one focused, fast-moving hour, discover
-how GitHub Copilot turns everyday technical work into something you can simply
-describe out loud and watch come to life — no deep coding background required.
-We'll go from a blank screen to real, working results through a handful of live
-demos, with you in the driver's seat and firmly in control the whole way —
-validating before anything goes live and keeping a close eye on the numbers.
-You'll pick up a simple, repeatable rhythm you can apply the moment you're back
-at your desk, whether you're untangling a messy export, spinning up an environment
-from scratch, or just tired of doing the same fiddly pipeline by hand. If you live
-close to the data or close to the infrastructure, you'll feel right at home. Come
-curious, bring a laptop, and leave with a fresh, practical way to get more done
-with less friction.
+This session is deliberately lop-sided. The facilitator talks for ~10 minutes to
+set the loop and run one live "magic moment", then **you** spend ~50 minutes
+actually doing the work:
 
-Open this whole folder in VS Code (**File ▸ Open Folder**) so Copilot can see the files.
+- **Systems engineers** turn a plain-English brief into Bicep and **deploy a real
+  Azure environment** — a resource group with a virtual network, an NSG, a Linux
+  VM, and private storage — then tear it down.
+- **Data engineers** clean and merge three messy CSV exports into one queryable
+  table, run live SQL, and **ship the clean file to Azure storage**, then tear it
+  down.
+
+The reusable pattern in every track is
+**Prompt → Suggestion → Run → Refine → Sanity-check.**
+
+## What you need
+
+- **VS Code** with **GitHub Copilot** (Chat, Agent mode) signed in.
+- The **Azure CLI** (`az`) installed.
+- An **Azure subscription** you can deploy into. You only need **Contributor** on
+  a subscription or resource group — **no Owner, no elevated rights**. The labs
+  never create role assignments.
+- For the data lab: **Python 3** (SQLite is built in).
+
+Open this whole folder in VS Code (**File ▸ Open Folder**) so Copilot can see the
+files.
 
 ```
 .
-├─ magic-moment/          ← Opener demo: make sense of a mystery log
+├─ magic-moment/               ← Facilitator opener: make sense of a mystery log
 │   ├─ server.log
 │   └─ README.md
-└─ personas/
-   ├─ infra/                 ← Describe infrastructure in English → IaC, deploy, fixes
-   │   ├─ architecture-brief.md
-   │   ├─ main.bicep
-   │   ├─ sample-error.txt
+└─ labs/
+   ├─ systems-engineer/        ← Describe an environment → IaC → deploy → tear down
+   │   ├─ LAB.md                  (start here — the step-by-step lab)
+   │   ├─ architecture-brief.md   (the plain-English brief)
+   │   ├─ main.bicep              (almost-empty starter for Copilot to fill)
+   │   ├─ sample-error.txt        (realistic deploy errors to fix)
    │   └─ README.md
-   └─ data/                  ← Build an ETL pipeline, then query the result
-       ├─ sales_january.csv     (messy on purpose: $ signs, mixed case, commas)
-       ├─ sales_february.csv    (different column names & date format)
-       ├─ product_prices.csv    (price lookup table)
-       └─ PIPELINE.md
+   └─ data-engineer/           ← Clean messy CSVs → query → ship to Azure storage
+       ├─ LAB.md                  (start here — the step-by-step lab)
+       ├─ sales_january.csv       (messy on purpose: $ signs, mixed case, commas)
+       ├─ sales_february.csv      (different column names & date format)
+       ├─ product_prices.csv      (price lookup table)
+       └─ README.md
 ```
 
-## The opener + two tracks
+## How the hour runs
 
-- **Magic moment — Make sense of a mystery log:** point Copilot at `magic-moment/server.log`
-  and get an instant plain-English diagnosis plus a clean, structured table — the
-  fast "wow" that opens the session for both audiences.
-- **Infra — Describe infrastructure in plain English:** turn `infra/architecture-brief.md`
-  into a plan, generate `main.bicep`, get the deploy/validate/destroy commands, and
-  paste `sample-error.txt` to fix a failed deployment — all in plain English.
-- **Data — ETL, then query:** clean and merge the messy `data/` exports into one table,
-  join the price list, and immediately run SQL on the result.
+1. **Intro (10 min)** — the loop, the two personas, one live magic moment
+   (`magic-moment/server.log`), and the safety rules.
+2. **Hands-on (50 min)** — pick the track closest to your job and follow its
+   `LAB.md` top to bottom. Coaches circulate.
+3. **Tear down** — every lab ends by deleting the resource group so nothing keeps
+   costing money.
 
-Each folder's README has a short, in-room demo flow and prompt starters.
+## Pick your track
+
+- **Systems Engineer** → [`labs/systems-engineer/LAB.md`](labs/systems-engineer/LAB.md)
+- **Data Engineer** → [`labs/data-engineer/LAB.md`](labs/data-engineer/LAB.md)
 
 ## About the data
 
-All names, emails, and numbers are **fictitious**. People (Megan Bowen, Adele Vance,
-Alex Wilber, Diego Siciliani) and the company **Contoso** are Microsoft's standard
-sample identities. There is **no real personal data** in this repository.
+All names, emails, and numbers are fictitious. People (Megan Bowen, Adele Vance,
+Alex Wilber, Diego Siciliani) and the company Contoso are Microsoft's standard
+sample identities. There is no real personal data in this repository.
 
 ## Tips
 
-- No setup or installs are required to *read* these files.
-- If a track asks you to *run* or *deploy* something, a coach will help — or Copilot will give you the one command to use.
-- Always work on a **copy** of real data, and validate infrastructure before you deploy.
+- No installs are required just to **read** these files.
+- Always **validate before you deploy** (`az deployment group what-if`) and
+  **run scripts on copies**.
+- **Tear everything down** at the end of your lab.
+- You only need **Contributor** — if a step seems to need Owner (a role
+  assignment), skip it. The labs are written to avoid it.
 
 ## License
 
