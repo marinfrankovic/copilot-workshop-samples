@@ -20,23 +20,20 @@ errors, while **you** stay in charge and approve each step.
 
 ---
 
-## The one thing to set up: Copilot **Agent mode**
+## Where you work: talking to Copilot
 
-The magic today is that Copilot can not only *write* things, it can *do* them —
-run commands, create files, deploy to Azure — right from the chat. For that, put
-Copilot Chat into **Agent mode**:
+Everything below happens where you set up in **[`SETUP.md`](../../SETUP.md)** —
+either **Copilot Chat (Agent mode)** in your **Codespace**, or your **Interactive
+session** in the **GitHub Copilot app**. Both work exactly the same way here.
 
-1. Open Copilot Chat (speech-bubble icon, or **Ctrl+Alt+I**).
-2. At the top or bottom of the chat box there's a mode dropdown — set it to
-   **Agent**.
-3. Now, when you ask for something, Copilot will show you the command or file it
-   wants to run and **wait for you to approve** (a **Continue** / **Allow**
-   button). **Read what it proposes, then approve.** That approval is you staying
-   in control.
+The magic today is that Copilot doesn't only *write* things, it *does* them — runs
+commands, creates files, deploys to Azure. Each time it wants to run something it
+**shows you and waits for your approval** (a **Continue** / **Allow** button).
+**Read what it proposes, then approve.** That approval is you staying in control.
 
 > Throughout this lab, a line in quotes like *"Do X"* means: **type it into
-> Copilot Chat (Agent mode) and press Enter**, then approve what it proposes. You
-> almost never type commands yourself.
+> Copilot and press Enter**, then approve what it proposes. You almost never type
+> commands yourself.
 
 ---
 
@@ -51,8 +48,7 @@ A tiny Contoso "sandbox" in Azure — its own **resource group** holding a
 
 ## Step 1 — Ask Copilot to make a plan
 
-Open the `labs/systems-engineer` folder in VS Code so Copilot can see the files.
-Then, in Copilot Chat (Agent mode), ask:
+Copilot can already see all the workshop files. In Copilot, ask:
 
 > *"Read the file `architecture-brief.md` in this folder. In plain English, tell me
 > what environment it describes, what each piece is for, and how they connect.
@@ -102,12 +98,9 @@ tells you** (you'll want it at teardown).
 > *"List everything you just created in that resource group, and explain in five
 > simple bullets what each thing is and roughly what it would cost per day."*
 
-*(If you'd like to see it yourself, you can run a quick check in the terminal —
-this is a validation command, not something to memorise:)*
-
-```powershell
-az resource list --resource-group <the-name-Copilot-chose> --output table
-```
+*(Want to double-check with your own eyes? Just ask: "Show me a table of every
+resource in that group." Copilot runs it and shows you — you never touch a
+command.)*
 
 ## Step 6 — Practise fixing a failure (pure Copilot)
 
@@ -125,14 +118,9 @@ jargon — you described the problem, Copilot fixed the one thing and re-ran it.
 > *"Delete the resource group you created for me so nothing keeps costing money,
 > and confirm when it's gone."*
 
-Approve it. To double-check it's really being deleted, you can validate yourself:
-
-```powershell
-az group exists --name <the-name-Copilot-chose>
-```
-
-`false` means it's gone. 🎉 You just built and destroyed a real cloud environment
-entirely by describing what you wanted.
+Approve it. To be sure, ask: *"Confirm the resource group is really gone."* When
+Copilot tells you it no longer exists, you're done. 🎉 You just built and
+destroyed a real cloud environment entirely by describing what you wanted.
 
 ---
 

@@ -20,21 +20,20 @@ charge.
 
 ---
 
-## The one thing to set up: Copilot **Agent mode**
+## Where you work: talking to Copilot
 
-The magic today is that Copilot can not only *write* code, it can *run* it — clean
-your files, run queries, upload to Azure — right from the chat. For that, put
-Copilot Chat into **Agent mode**:
+Everything below happens where you set up in **[`SETUP.md`](../../SETUP.md)** —
+either **Copilot Chat (Agent mode)** in your **Codespace**, or your **Interactive
+session** in the **GitHub Copilot app**. Both work exactly the same way here.
 
-1. Open Copilot Chat (speech-bubble icon, or **Ctrl+Alt+I**).
-2. Set the mode dropdown to **Agent**.
-3. When you ask for something, Copilot shows the program or command it wants to
-   run and **waits for you to approve** (a **Continue** / **Allow** button).
-   **Read it, then approve.** That's you staying in control.
+The magic today is that Copilot doesn't only *write* code, it *runs* it — cleans
+your files, runs queries, uploads to Azure. Each time it wants to run something it
+**shows you and waits for your approval** (a **Continue** / **Allow** button).
+**Read it, then approve.** That's you staying in control.
 
 > Throughout this lab, a line in quotes like *"Do X"* means: **type it into
-> Copilot Chat (Agent mode) and press Enter**, then approve what it proposes. You
-> almost never type commands yourself.
+> Copilot and press Enter**, then approve what it proposes. You almost never type
+> commands yourself.
 
 ---
 
@@ -48,8 +47,7 @@ folder: `sales_january.csv`, `sales_february.csv`, `product_prices.csv`.
 
 ## Step 1 — Ask Copilot what's wrong with the data
 
-Open the `labs/data-engineer` folder in VS Code so Copilot can see the files.
-Then, in Copilot Chat (Agent mode), ask:
+Copilot can already see all the workshop files. In Copilot, ask:
 
 > *"Look at the 3 CSV files in this folder. In plain English, list everything
 > that's messy or inconsistent — different column names, date formats, dollar
@@ -106,25 +104,17 @@ and ask Copilot to fix it.
 Copilot proposes each command — **read and approve**. **Note the resource group
 name** it tells you (you'll want it at teardown).
 
-*(Want to see the uploaded file yourself? That's a fair validation command:)*
-
-```powershell
-az storage blob list --container-name reports --account-name <name-Copilot-made> --account-key <key> --output table
-```
+*(Want to see the uploaded file yourself? Just ask: "Show me the files now in
+that storage container." Copilot lists them for you — no commands to type.)*
 
 ## Step 7 — Ask Copilot to tear it all down (do NOT skip) 🧹
 
 > *"Delete the resource group you created so nothing keeps costing money, and
 > confirm when it's gone."*
 
-Approve it. To double-check yourself:
-
-```powershell
-az group exists --name <the-name-Copilot-chose>
-```
-
-`false` means it's gone. 🎉 You cleaned real data and shipped it to the cloud —
-all by describing what you wanted.
+Approve it. To be sure, ask: *"Confirm the resource group is really gone."* When
+Copilot tells you it no longer exists, you're done. 🎉 You cleaned real data and
+shipped it to the cloud — all by describing what you wanted.
 
 ---
 

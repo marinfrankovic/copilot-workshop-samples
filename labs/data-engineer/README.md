@@ -20,8 +20,8 @@ the pipeline. You describe each step; Copilot writes it; you run and check.
 - [`LAB.md`](LAB.md) — the step-by-step, self-guided lab.
 
 ## What you'll build (Extract → Transform → Load → Query → Ship)
-You do all of this by **talking to Copilot in Agent mode** — it writes and runs
-the code, you check the numbers and approve each step.
+You do all of this by **talking to Copilot** — it writes and runs the code, you
+check the numbers and approve each step.
 1. **Extract:** ask Copilot to read all three CSVs.
 2. **Transform:** ask it to normalise column names, dates, and money, and title-case names.
 3. **Load:** it writes a clean `sales_clean.csv` — never overwriting the originals.
@@ -30,12 +30,14 @@ the code, you check the numbers and approve each step.
    clean file**, then tear it down.
 
 ## What you need
-- VS Code + GitHub Copilot signed in.
-- Python 3 (SQLite ships with it). Azure CLI (`az`) for the ship step.
-- An Azure subscription your facilitator **invited you to**, with **Contributor**
-  access and the **subscription ID** they gave you. **No Owner needed** — the
-  upload uses the storage account key, not a role assignment. (All covered in
-  [`SETUP.md`](../../SETUP.md).)
+- **GitHub Copilot** — either in a **GitHub Codespace** (nothing to install) or the
+  **GitHub Copilot app** (desktop). Your facilitator tells you which; both are set
+  up in [`SETUP.md`](../../SETUP.md).
+- Python 3 (SQLite ships with it) and Azure CLI (`az`) — already present in the
+  Codespace; installed locally for the app.
+- An Azure subscription your facilitator **provides and invites you to**, with
+  **Contributor** access and the **subscription ID** they gave you. **No Owner
+  needed** — the upload uses the storage account key, not a role assignment.
 
 ## Safety
 - Write to **new** files only; keep the source CSVs untouched.
