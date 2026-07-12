@@ -25,20 +25,30 @@ moment". Then **you** spend ~50 minutes doing it yourself:
 The rhythm in every track is
 **Prompt → Suggestion → Run → Refine → Sanity-check.**
 
-> **The whole point is the conversation with Copilot.** You use Copilot Chat in
-> **Agent mode**, where it writes the code *and* runs the commands and deploys —
-> showing you each step and waiting for your approval. You describe outcomes in
-> plain English; you rarely type a command yourself (a few sign-in and
-> double-check commands aside).
+> **The whole point is the conversation with Copilot.** You give Copilot tasks in
+> plain English and it writes the code *and* runs the commands and deploys —
+> showing you each step so you can approve it. You describe outcomes in plain
+> English; you rarely type a command yourself (a few sign-in and double-check
+> commands aside).
+>
+> You can do the whole workshop **two ways** — your facilitator will tell you
+> which:
+>
+> - **GitHub Codespaces** — nothing to install; everything runs in your browser.
+> - **GitHub Copilot app** — a desktop app you install once.
+>
+> [`SETUP.md`](SETUP.md) has simple, beginner-friendly steps for both.
 
 ## What you need
 
-- A laptop and a **GitHub account with a Copilot licence** (your facilitator
-  confirms this).
-- An **Azure subscription** — your facilitator **invites you** to theirs and gives
-  you the **subscription ID** and **Contributor** access. That's all the access
-  you need — no admin rights.
-- A little time to install free tools (all covered in [`SETUP.md`](SETUP.md)).
+- A laptop with a web browser and a **GitHub account**. Your **facilitator
+  provides GitHub Copilot access** — if you don't already have it, they add it to
+  your account, so you just sign in.
+- An **Azure subscription** — your facilitator **always provides this**: they
+  **invite you** to theirs and give you the **subscription ID** and **Contributor**
+  access. That's all the access you need — no admin rights.
+- Either **GitHub Codespaces** (nothing to install) or the **GitHub Copilot app**
+  (a quick install) — both are covered step by step in [`SETUP.md`](SETUP.md).
 
 ## Pick your track
 
@@ -49,7 +59,8 @@ The rhythm in every track is
 
 ```
 .
-├─ SETUP.md                    ← START HERE: get your laptop ready, step by step
+├─ SETUP.md                    ← START HERE: get set up, step by step
+├─ .devcontainer/              ← Makes a GitHub Codespace ready-to-go (tools pre-installed)
 ├─ magic-moment/               ← The facilitator's opening demo (a mystery log)
 │   ├─ server.log
 │   └─ README.md
