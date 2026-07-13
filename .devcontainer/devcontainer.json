@@ -11,6 +11,8 @@
     "vscode": {
       "settings": {
         "github.copilot.chat.enabled": false,
+        "workbench.secondarySideBar.defaultVisibility": "hidden",
+        "chat.commandCenter.enabled": false,
         "terminal.integrated.defaultProfile.linux": "bash"
       },
       "extensions": [
