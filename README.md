@@ -4,11 +4,16 @@ Hands-on files for the session **"GitHub Copilot for non-coders, by role"**. You
 describe what you want in plain English, GitHub Copilot drafts it, and you stay in
 control. **No coding experience needed.**
 
-## 🚀 New here? Start with [`CODESPACES.md`](CODESPACES.md)
+## Start here: choose your workshop path
 
-**[`CODESPACES.md`](CODESPACES.md)** walks you through starting a browser-based
-environment with every workshop tool ready, signing into Copilot CLI, and
-connecting to Azure. Do that first, then pick a track below.
+Open **[`START-HERE.md`](START-HERE.md)** first, then choose one path:
+
+- **GitHub Codespaces**: browser-based, nothing to install. Use Copilot CLI in
+  the terminal; sidebar Chat is disabled for the workshop.
+- **GitHub Copilot app for Windows**: install the desktop app, then work in an
+  Interactive session. Download it from <https://gh.io/copilot-app-win64>.
+
+Both paths use the same workshop labs and prompts.
 
 ## Format: 10 minutes of talk, 50 minutes of hands-on
 
