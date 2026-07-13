@@ -8,7 +8,7 @@ real**, then tear it down. You stay in control; Copilot drafts.
 > **Start here:** open [`LAB.md`](LAB.md) and follow it top to bottom (~45 min).
 >
 > **Never used these tools before?** Do [`SETUP.md`](../../SETUP.md) in the top
-> folder first (install tools, get the files, sign into Azure), then open `LAB.md`.
+> folder first (start Codespaces, sign into Copilot and Azure), then open `LAB.md`.
 
 ## Files
 - [`LAB.md`](LAB.md) — the step-by-step, self-guided lab.
@@ -17,10 +17,9 @@ real**, then tear it down. You stay in control; Copilot drafts.
 - [`sample-error.txt`](sample-error.txt) — realistic deployment errors to paste and fix.
 
 ## What you need
-- **GitHub Copilot** — either in a **GitHub Codespace** (nothing to install) or the
-  **GitHub Copilot app** (desktop). Your facilitator tells you which; both are set
-  up in [`SETUP.md`](../../SETUP.md).
-- Azure CLI (`az`) — already present in the Codespace; installed locally for the app.
+- A **GitHub Codespace** started from this repository, following
+  [`CODESPACES.md`](../../CODESPACES.md).
+- Azure CLI (`az`) and Bicep — already present in the Codespace.
 - An Azure subscription your facilitator **provides and invites you to**, with
   **Contributor** access and the **subscription ID** they gave you. **No Owner
   needed** — this lab never creates role assignments.

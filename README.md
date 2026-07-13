@@ -4,12 +4,11 @@ Hands-on files for the session **"GitHub Copilot for non-coders, by role"**. You
 describe what you want in plain English, GitHub Copilot drafts it, and you stay in
 control. **No coding experience needed.**
 
-## 🚀 New here? Start with [`SETUP.md`](SETUP.md)
+## 🚀 New here? Start with [`CODESPACES.md`](CODESPACES.md)
 
-**[`SETUP.md`](SETUP.md)** walks you through everything, step by step: installing
-the tools, signing into GitHub Copilot, downloading these files, and connecting to
-Azure with the subscription your facilitator invited you to. Do that first, then
-pick a track below.
+**[`CODESPACES.md`](CODESPACES.md)** walks you through starting a browser-based
+environment with every workshop tool ready, signing into Copilot CLI, and
+connecting to Azure. Do that first, then pick a track below.
 
 ## Format: 10 minutes of talk, 50 minutes of hands-on
 
@@ -26,18 +25,13 @@ The rhythm in every track is
 **Prompt → Suggestion → Run → Refine → Sanity-check.**
 
 > **The whole point is the conversation with Copilot.** You give Copilot tasks in
-> plain English and it writes the code *and* runs the commands and deploys —
-> showing you each step so you can approve it. You describe outcomes in plain
-> English; you rarely type a command yourself (a few sign-in and double-check
-> commands aside).
+> plain English through the `copilot` terminal command. It writes code and runs
+> commands only after your approval. You describe outcomes in plain English; you
+> rarely type commands yourself beyond sign-in and double-check commands.
 >
-> You can do the whole workshop **two ways** — your facilitator will tell you
-> which:
->
-> - **GitHub Codespaces** — nothing to install; everything runs in your browser.
-> - **GitHub Copilot app** — a desktop app you install once.
->
-> [`SETUP.md`](SETUP.md) has simple, beginner-friendly steps for both.
+> You run the workshop in **GitHub Codespaces**. Nothing needs to be installed on
+> your computer, and Copilot Chat is disabled so the terminal is the single place
+> to work with Copilot.
 
 ## What you need
 
@@ -47,8 +41,8 @@ The rhythm in every track is
 - An **Azure subscription** — your facilitator **always provides this**: they
   **invite you** to theirs and give you the **subscription ID** and **Contributor**
   access. That's all the access you need — no admin rights.
-- Either **GitHub Codespaces** (nothing to install) or the **GitHub Copilot app**
-  (a quick install) — both are covered step by step in [`SETUP.md`](SETUP.md).
+- **GitHub Codespaces** (nothing to install), covered step by step in
+  [`CODESPACES.md`](CODESPACES.md).
 
 ## Pick your track
 
@@ -60,6 +54,7 @@ The rhythm in every track is
 ```
 .
 ├─ SETUP.md                    ← START HERE: get set up, step by step
+├─ CODESPACES.md               ← START HERE in a browser: tools + Copilot CLI
 ├─ .devcontainer/              ← Makes a GitHub Codespace ready-to-go (tools pre-installed)
 ├─ magic-moment/               ← The facilitator's opening demo (a mystery log)
 │   ├─ server.log
@@ -89,7 +84,7 @@ sample identities. There is no real personal data here.
 
 - **You own the result**, not Copilot. It drafts; you check and decide.
 - **Preview before you build** (`what-if`), and **work on copies** of data.
-- **Never paste** secrets, keys, or your subscription ID into Copilot Chat.
+- **Never paste** secrets, keys, or your subscription ID into Copilot.
 - **Tear everything down** at the end of your lab, so nothing keeps costing money.
 
 ## License

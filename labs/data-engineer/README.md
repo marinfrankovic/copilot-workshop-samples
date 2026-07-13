@@ -7,7 +7,7 @@ the pipeline. You describe each step; Copilot writes it; you run and check.
 > **Start here:** open [`LAB.md`](LAB.md) and follow it top to bottom (~45 min).
 >
 > **Never used these tools before?** Do [`SETUP.md`](../../SETUP.md) in the top
-> folder first (install tools incl. Python, get the files, sign into Azure), then
+> folder first (start Codespaces, sign into Copilot and Azure), then
 > open `LAB.md`.
 
 ## Files (deliberately messy, like real exports)
@@ -30,11 +30,10 @@ check the numbers and approve each step.
    clean file**, then tear it down.
 
 ## What you need
-- **GitHub Copilot** — either in a **GitHub Codespace** (nothing to install) or the
-  **GitHub Copilot app** (desktop). Your facilitator tells you which; both are set
-  up in [`SETUP.md`](../../SETUP.md).
+- A **GitHub Codespace** started from this repository, following
+  [`CODESPACES.md`](../../CODESPACES.md).
 - Python 3 (SQLite ships with it) and Azure CLI (`az`) — already present in the
-  Codespace; installed locally for the app.
+  Codespace.
 - An Azure subscription your facilitator **provides and invites you to**, with
   **Contributor** access and the **subscription ID** they gave you. **No Owner
   needed** — the upload uses the storage account key, not a role assignment.

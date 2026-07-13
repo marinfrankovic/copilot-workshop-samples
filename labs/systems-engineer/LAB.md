@@ -22,9 +22,8 @@ errors, while **you** stay in charge and approve each step.
 
 ## Where you work: talking to Copilot
 
-Everything below happens where you set up in **[`SETUP.md`](../../SETUP.md)** —
-either **Copilot Chat (Agent mode)** in your **Codespace**, or your **Interactive
-session** in the **GitHub Copilot app**. Both work exactly the same way here.
+Everything below happens in the Copilot terminal in your **Codespace**, started
+with the `copilot` command after you complete **[`SETUP.md`](../../SETUP.md)**.
 
 The magic today is that Copilot doesn't only *write* things, it *does* them — runs
 commands, creates files, deploys to Azure. Each time it wants to run something it
@@ -105,7 +104,7 @@ command.)*
 ## Step 6 — Practise fixing a failure (pure Copilot)
 
 This is the most useful skill of the day. Open **`sample-error.txt`**, copy one
-error, paste it into Copilot Chat and ask:
+error, paste it into Copilot and ask:
 
 > *"I got this error deploying. Explain it in plain English and make the smallest
 > fix — don't rewrite my whole template. Then try the deployment again."*

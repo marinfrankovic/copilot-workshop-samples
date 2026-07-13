@@ -13,13 +13,10 @@ into structure). It is deliberately NOT the infra lab and NOT the data lab.
   circuit breaker, a fix, and recovery. Fictitious Contoso.
 
 ## How to run it
-Run it wherever you're set up (see [`SETUP.md`](../SETUP.md)):
-- **Codespace:** in **Copilot Chat (Agent mode)**.
-- **GitHub Copilot app:** an **Interactive** session on the project (or a **Quick
-  chat**).
+In the Codespace terminal, run `copilot` (see [`SETUP.md`](../SETUP.md)).
 
-Copilot can already see `server.log`, so just type the prompts below into the chat
-one at a time — no commands to copy or run.
+Copilot can already see `server.log`, so type the prompts below into the Copilot
+terminal one at a time — no commands to copy or run.
 
 ## The demo (the loop, ~2 minutes)
 1. **Describe:** "Look at server.log. In plain English, what is this service doing and what went wrong? Assume I'm not reading every line."
