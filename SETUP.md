@@ -1,8 +1,8 @@
 # Setup — start here (no experience needed)
 
 This page gets you ready. **You don't need to know how to code.** Choose either
-**GitHub Codespaces** or the **GitHub Copilot app**, then pick a track and open
-its `LAB.md`.
+**GitHub Codespaces** or the **GitHub Copilot app for Windows**, then pick a
+track and open its `LAB.md`.
 
 > **What your facilitator gives you (they always provide these):**
 > 1. **GitHub Copilot access** on your GitHub account. If you don't already have
@@ -11,8 +11,8 @@ its `LAB.md`.
 >    `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`) and an **email invite** to that
 >    subscription with **Contributor** access. Accept the invite (check your
 >    email, click **Accept**) before you start.
-> 3. A choice of **GitHub Codespaces** or the **GitHub Copilot app**. Follow the
->    matching path below.
+> 3. A choice of **GitHub Codespaces** or the **GitHub Copilot app for Windows**.
+>    Follow the matching path below.
 >
 > Write your subscription ID here so it's handy: `________________________________`
 
@@ -22,7 +22,8 @@ its `LAB.md`.
 
 - **Option A - GitHub Codespaces**: nothing to install; use Copilot in the
    terminal.
-- **Option B - GitHub Copilot app**: a desktop Interactive session.
+- **Option B - GitHub Copilot app for Windows**: download the desktop app and
+   start an Interactive session.
 
 ---
 
@@ -67,11 +68,13 @@ subscription name, restart Copilot with `copilot`.
 
 ---
 
-# Option B - GitHub Copilot app (desktop)
+# Option B - GitHub Copilot app for Windows
 
 ## Step 1 - Install the app and required tools
 
-- Install the **GitHub Copilot app** from <https://gh.io/app>.
+- Download and install the **GitHub Copilot app for Windows (x64)** from
+   <https://gh.io/copilot-app-win64>. If Windows shows a security prompt, verify
+   that the installer is published by GitHub before continuing.
 - Install **Git** from <https://git-scm.com/downloads>.
 - Install the **Azure CLI**: Windows users can use
    <https://aka.ms/installazurecliwindows>; on macOS, run `brew install azure-cli`.
@@ -81,7 +84,8 @@ subscription name, restart Copilot with `copilot`.
 ## Step 2 - Add the workshop project and start a session
 
 1. Open the GitHub Copilot app and sign in with the account that has Copilot access.
-2. Select **Add project from > Repository URL** and enter:
+2. Next to **Sessions**, select **+**, then choose a repository from GitHub or
+   clone from a URL. Enter:
 
     ```text
     https://github.com/marinfrankovic/copilot-workshop-samples.git

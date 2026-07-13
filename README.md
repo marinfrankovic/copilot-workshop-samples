@@ -33,7 +33,8 @@ The rhythm in every track is
 >
 > - **GitHub Codespaces**: nothing to install; Copilot Chat is disabled and you
 >   use the `copilot` terminal command.
-> - **GitHub Copilot app**: a desktop app with an Interactive session.
+> - **GitHub Copilot app for Windows**: download it from
+>   <https://gh.io/copilot-app-win64>, then start an Interactive session.
 
 ## What you need
 
@@ -43,8 +44,8 @@ The rhythm in every track is
 - An **Azure subscription** — your facilitator **always provides this**: they
   **invite you** to theirs and give you the **subscription ID** and **Contributor**
   access. That's all the access you need — no admin rights.
-- Either **GitHub Codespaces** or the **GitHub Copilot app**, covered step by
-  step in [`SETUP.md`](SETUP.md).
+- Either **GitHub Codespaces** or the **GitHub Copilot app for Windows**,
+  covered step by step in [`SETUP.md`](SETUP.md).
 
 ## Pick your track
 
