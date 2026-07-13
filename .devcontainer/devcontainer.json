@@ -20,5 +20,5 @@
       ]
     }
   },
-  "postCreateCommand": "sudo ln -sf /usr/bin/python3 /usr/local/bin/python && sudo npm install --global @github/copilot && copilot --version && az version && az bicep version && python --version"
+  "onCreateCommand": "sudo ln -sf /usr/bin/python3 /usr/local/bin/python && sudo npm install --global @github/copilot && copilot --version && az version && az bicep version && python --version"
 }
