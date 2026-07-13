@@ -1,8 +1,8 @@
 # Setup — start here (no experience needed)
 
-This page gets you ready. **You don't need to know how to code.** The workshop
-runs in **GitHub Codespaces**, so every workshop tool is available in your
-browser. When you reach the end, you'll pick a track and open its `LAB.md`.
+This page gets you ready. **You don't need to know how to code.** Choose either
+**GitHub Codespaces** or the **GitHub Copilot app**, then pick a track and open
+its `LAB.md`.
 
 > **What your facilitator gives you (they always provide these):**
 > 1. **GitHub Copilot access** on your GitHub account. If you don't already have
@@ -11,12 +11,22 @@ browser. When you reach the end, you'll pick a track and open its `LAB.md`.
 >    `xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx`) and an **email invite** to that
 >    subscription with **Contributor** access. Accept the invite (check your
 >    email, click **Accept**) before you start.
+> 3. A choice of **GitHub Codespaces** or the **GitHub Copilot app**. Follow the
+>    matching path below.
 >
 > Write your subscription ID here so it's handy: `________________________________`
 
 ---
 
-# GitHub Codespaces (nothing to install)
+## Choose your path
+
+- **Option A - GitHub Codespaces**: nothing to install; use Copilot in the
+   terminal.
+- **Option B - GitHub Copilot app**: a desktop Interactive session.
+
+---
+
+# Option A - GitHub Codespaces (nothing to install)
 
 A Codespace is a ready-made workspace that runs in your browser. The tools you
 need — **Copilot CLI, Azure CLI, Bicep, and Python** — are already installed for
@@ -55,6 +65,36 @@ The first command prints a short code and the link
 with the account your facilitator invited. When the last command prints your
 subscription name, restart Copilot with `copilot`.
 
+---
+
+# Option B - GitHub Copilot app (desktop)
+
+## Step 1 - Install the app and required tools
+
+- Install the **GitHub Copilot app** from <https://gh.io/app>.
+- Install **Git** from <https://git-scm.com/downloads>.
+- Install the **Azure CLI**: Windows users can use
+   <https://aka.ms/installazurecliwindows>; on macOS, run `brew install azure-cli`.
+- Data-track attendees also install **Python** from
+   <https://www.python.org/downloads/>. On Windows, select **Add Python to PATH**.
+
+## Step 2 - Add the workshop project and start a session
+
+1. Open the GitHub Copilot app and sign in with the account that has Copilot access.
+2. Select **Add project from > Repository URL** and enter:
+
+    ```text
+    https://github.com/marinfrankovic/copilot-workshop-samples.git
+    ```
+
+3. Start a session for `copilot-workshop-samples` in **Interactive** mode.
+
+## Step 3 - Sign in to Azure
+
+Ask Copilot: *"Sign me into Azure, switch to the subscription with ID
+`PASTE-YOUR-SUBSCRIPTION-ID-HERE`, and show me the account and subscription so I
+can confirm them."* Approve the proposed steps and complete the browser sign-in.
+
 ## Pick your track and open its lab
 
 - **Systems Engineer** (build an Azure environment):
@@ -65,13 +105,13 @@ subscription name, restart Copilot with `copilot`.
 To read your lab guide, open it on GitHub in your browser (links above), or just
 ask Copilot: *"Show me the file `labs/systems-engineer/LAB.md`."*
 
-Now follow your lab top to bottom in the Copilot terminal. Coaches are in the
+Now follow your lab top to bottom in the place you set up: the Copilot terminal
+in Codespaces, or an Interactive session in the Copilot app. Coaches are in the
 room — wave one over anytime.
 
 > **A note on "ask Copilot":** everywhere in the labs, a line in quotes like
-> *"Do X"* means **type it into the Copilot terminal** and press Enter, then read
-> and approve what it proposes. The whole workshop is this conversation; you
-> rarely type commands yourself.
+> *"Do X"* means type it into Copilot: the terminal in Codespaces or your
+> Interactive session in the Copilot app. Read and approve what it proposes.
 >
 > **Got an error at any point?** Paste the whole error back into Copilot and ask
 > *"What does this mean and how do I fix it?"* — that's the loop you'll use all

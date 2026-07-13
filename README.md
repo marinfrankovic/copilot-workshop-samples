@@ -29,9 +29,11 @@ The rhythm in every track is
 > commands only after your approval. You describe outcomes in plain English; you
 > rarely type commands yourself beyond sign-in and double-check commands.
 >
-> You run the workshop in **GitHub Codespaces**. Nothing needs to be installed on
-> your computer, and Copilot Chat is disabled so the terminal is the single place
-> to work with Copilot.
+> You can do the workshop two ways:
+>
+> - **GitHub Codespaces**: nothing to install; Copilot Chat is disabled and you
+>   use the `copilot` terminal command.
+> - **GitHub Copilot app**: a desktop app with an Interactive session.
 
 ## What you need
 
@@ -41,8 +43,8 @@ The rhythm in every track is
 - An **Azure subscription** — your facilitator **always provides this**: they
   **invite you** to theirs and give you the **subscription ID** and **Contributor**
   access. That's all the access you need — no admin rights.
-- **GitHub Codespaces** (nothing to install), covered step by step in
-  [`CODESPACES.md`](CODESPACES.md).
+- Either **GitHub Codespaces** or the **GitHub Copilot app**, covered step by
+  step in [`SETUP.md`](SETUP.md).
 
 ## Pick your track
 

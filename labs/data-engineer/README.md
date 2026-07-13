@@ -30,10 +30,10 @@ check the numbers and approve each step.
    clean file**, then tear it down.
 
 ## What you need
-- A **GitHub Codespace** started from this repository, following
-  [`CODESPACES.md`](../../CODESPACES.md).
-- Python 3 (SQLite ships with it) and Azure CLI (`az`) — already present in the
-  Codespace.
+- **GitHub Codespaces** following [`CODESPACES.md`](../../CODESPACES.md), or the
+  **GitHub Copilot app** following [`SETUP.md`](../../SETUP.md).
+- Python 3 (SQLite ships with it) and Azure CLI (`az`): included in Codespaces;
+  install them locally for the Copilot app path.
 - An Azure subscription your facilitator **provides and invites you to**, with
   **Contributor** access and the **subscription ID** they gave you. **No Owner
   needed** — the upload uses the storage account key, not a role assignment.

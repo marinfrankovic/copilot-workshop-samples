@@ -22,8 +22,9 @@ charge.
 
 ## Where you work: talking to Copilot
 
-Everything below happens in the Copilot terminal in your **Codespace**, started
-with the `copilot` command after you complete **[`SETUP.md`](../../SETUP.md)**.
+Everything below happens where you completed **[`SETUP.md`](../../SETUP.md)**:
+the Copilot terminal in a **Codespace**, or an **Interactive** session in the
+GitHub Copilot app.
 
 The magic today is that Copilot doesn't only *write* code, it *runs* it — cleans
 your files, runs queries, uploads to Azure. Each time it wants to run something it

@@ -17,9 +17,10 @@ real**, then tear it down. You stay in control; Copilot drafts.
 - [`sample-error.txt`](sample-error.txt) — realistic deployment errors to paste and fix.
 
 ## What you need
-- A **GitHub Codespace** started from this repository, following
-  [`CODESPACES.md`](../../CODESPACES.md).
-- Azure CLI (`az`) and Bicep — already present in the Codespace.
+- **GitHub Codespaces** following [`CODESPACES.md`](../../CODESPACES.md), or the
+  **GitHub Copilot app** following [`SETUP.md`](../../SETUP.md).
+- Azure CLI (`az`) and Bicep: included in Codespaces; install Azure CLI locally
+  for the Copilot app path.
 - An Azure subscription your facilitator **provides and invites you to**, with
   **Contributor** access and the **subscription ID** they gave you. **No Owner
   needed** — this lab never creates role assignments.
