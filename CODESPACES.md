@@ -19,6 +19,10 @@ Node.js, Python, Azure CLI, Bicep, and GitHub Copilot CLI.
    python --version
    ```
 
+If you opened a Codespace before the latest workshop configuration was
+published, run **Codespaces: Rebuild Container** from the Command Palette
+before checking the tools.
+
 ## Start Copilot in the terminal
 
 From the repository root, run:

@@ -1,8 +1,11 @@
 {
   "name": "GitHub Copilot for Non-Coders Workshop",
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
   "features": {
-    "ghcr.io/devcontainers/features/azure-cli:1": "latest",
+    "ghcr.io/devcontainers/features/azure-cli:1": {
+      "version": "latest",
+      "installBicep": true
+    },
     "ghcr.io/devcontainers/features/node:1": "22",
     "ghcr.io/devcontainers/features/python:1": "3.12"
   },
@@ -17,6 +20,5 @@
       ]
     }
   },
-  "postCreateCommand": "npm install --global @github/copilot && az bicep install && copilot --version && az version && python --version",
-  "remoteUser": "vscode"
+  "postCreateCommand": "sudo npm install --global @github/copilot && copilot --version && az version && az bicep version && python --version"
 }
